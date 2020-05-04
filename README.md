@@ -31,7 +31,7 @@ If there has any question, please don't hesitate to contact D10619116@gs.takming
 開啟cmd -> python test_teacher.py
 
 
-
+[![](http://img.youtube.com/vi/nkDJDnIIBbk/0.jpg)](http://www.youtube.com/watch?v=nkDJDnIIBbk "Demo測試")
 
 ```python
 
