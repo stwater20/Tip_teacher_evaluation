@@ -1,5 +1,5 @@
 
-## TakmingTip 懶人導師評量 
+## TakmingTip 懶人導師評量 活動意見表
 
 
 ----
@@ -27,8 +27,8 @@ If there has any question, please don't hesitate to contact D10619116@gs.takming
 ----
 ### 操作方法<br>
 
-修改test1.test_teacher("填入學號","填入密碼") <br>
-開啟cmd -> python test_teacher.py
+
+開啟cmd -> python test_teacher.py 學號 密碼
 
 
 [![](http://img.youtube.com/vi/nkDJDnIIBbk/0.jpg)](http://www.youtube.com/watch?v=nkDJDnIIBbk "Demo測試")
