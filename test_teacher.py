@@ -10,6 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from random import randint
+import sys
 
 class TestTeacher():
   def setup_method(self, method):
@@ -29,9 +30,7 @@ class TestTeacher():
       r = randint(0,len(task)-1)
       return task[r]  
   
-
-  
-  def test_teacher(self,id,pwd):
+  def test_Login(self,id,pwd):
     self.driver.get("http://netinfo.takming.edu.tw/tip/")
     self.driver.set_window_size(666, 680)
     self.driver.switch_to.frame(0)
@@ -42,7 +41,10 @@ class TestTeacher():
     time.sleep(5)
     alert = self.driver.switch_to_alert()
     alert.accept()
-    self.driver.get("http://netinfo.takming.edu.tw/tip/tutor/ask.php")
+  def test_teacher(self):
+    self.driver.get("http://netinfo.takming.edu.tw/tip/tutor/explain.php")
+    time.sleep(1)
+    self.driver.find_element(By.TAG_NAME, "a").click()
     self.driver.find_element(By.NAME, "q1").click()
     self.driver.find_element(By.NAME, "q2").click()
     self.driver.find_element(By.NAME, "q3").click()
@@ -61,10 +63,66 @@ class TestTeacher():
     self.driver.find_element(By.NAME, "textarea1").send_keys(r)
     time.sleep(2)
     self.driver.find_element(By.XPATH, '//html/body/center/table/tbody/tr[23]/td/input[2]').click()
+    
+  def tt(self):
+    time.sleep(5)
+    self.driver.get("http://netinfo.takming.edu.tw/tip/grade/explain.php")
+    self.driver.find_element(By.TAG_NAME, "a").click()
+    time.sleep(1)
+    while(self.driver.find_element(By.TAG_NAME, "a")):
+      self.driver.find_element(By.TAG_NAME, "a").click()
+      try:
+        time.sleep(1)
+        self.driver.find_element(By.TAG_NAME, "a").click()
+      except:
+        pass
+      self.driver.find_element(By.NAME, "q1").click()
+      self.driver.find_element(By.CSS_SELECTOR, "table:nth-child(9) tr:nth-child(3) > td:nth-child(7) > input").click()
+      self.driver.find_element(By.NAME, "q3").click()
+      self.driver.find_element(By.CSS_SELECTOR, "table:nth-child(9) tr:nth-child(5) > td:nth-child(7) > input").click()
+      self.driver.find_element(By.NAME, "q5").click()
+      self.driver.find_element(By.NAME, "q6").click()
+      self.driver.find_element(By.NAME, "q7").click()
+      self.driver.find_element(By.NAME, "q8").click()
+      self.driver.find_element(By.NAME, "q9").click()
+      self.driver.find_element(By.NAME, "q10").click()
+      self.driver.find_element(By.NAME, "q11").click()
+      self.driver.find_element(By.NAME, "q12").click()
+      self.driver.find_element(By.NAME, "q13").click()
+      self.driver.find_element(By.NAME, "q14").click()
+      self.driver.find_element(By.NAME, "q15").click()
+      self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(12) tr:nth-child(3) > td:nth-child(3)").click()
+      self.driver.find_element(By.NAME, "q16").click()
+      self.driver.find_element(By.NAME, "q17").click()
+      self.driver.find_element(By.NAME, "q18").click()
+      self.driver.find_element(By.NAME, "q19").click()
+      self.driver.find_element(By.NAME, "q20").click()
+      self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(14) tr:nth-child(2) > td:nth-child(3)").click()
+      self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(14) tr:nth-child(2) > td:nth-child(3)").click()
+      self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(14) tr:nth-child(3) > td:nth-child(3)").click()
+      self.driver.find_element(By.NAME, "q22").click()
+      self.driver.find_element(By.NAME, "q21").click()
+      self.driver.find_element(By.NAME, "q23").click()
+      self.driver.find_element(By.NAME, "q24").click()
+      self.driver.find_element(By.CSS_SELECTOR, "p tr:nth-child(1) > td:nth-child(3)").click()
+      self.driver.find_element(By.NAME, "q25").click()
+      self.driver.find_element(By.NAME, "q26").click()
+      self.driver.find_element(By.NAME, "q27").click()
+      self.driver.find_element(By.NAME, "q28").click()
+      self.driver.find_element(By.NAME, "q29").click()
+      self.driver.find_element(By.NAME, "q30").click()
+      self.driver.find_element(By.CSS_SELECTOR, "center > input:nth-child(1)").click()
+      self.driver.find_element(By.LINK_TEXT, "請回選單表單").click()
+      time.sleep(2)
+      
+    
 if __name__ =="__main__":
   test1 = TestTeacher()
   test1.setup_method("testing")
-  test1.test_teacher("填入帳號","填入密碼")
+
+  test1.test_Login(sys.argv[1],sys.argv[2])
+  test1.test_teacher()
+  test1.tt()
   time.sleep(5)
   test1.teardown_method("")
  
