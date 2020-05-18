@@ -33,6 +33,7 @@ If there has any question, please don't hesitate to contact D10619116@gs.takming
 
 ### 注意
 
+檔案請全部打包下載
 為保證程式正常運行，輸入完帳密後勾選指定填寫模組，點擊登入後，請不要對該瀏覽器做任何操作。
 
 
