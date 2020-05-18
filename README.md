@@ -31,6 +31,9 @@ If there has any question, please don't hesitate to contact D10619116@gs.takming
 1. 開啟dist資料夾內的main.exe後 輸入帳號 密碼(適用沒套件沒環境的情況，推薦!!)
 2. 開啟cmd -> python test_teacher.py 學號 密碼(要自己裝套件)
 
+###注意
+
+為保證程式正常運行，輸入完帳密後勾選指定填寫模組，點擊登入後，請不要對該瀏覽器做任何操作，確保程式正常運行。
 
 
 
